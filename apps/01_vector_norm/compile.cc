@@ -10,20 +10,22 @@ double a[N];
 void kernel(double* __restrict a) {
   #pragma ss config
   {
+    double acc = 0.0;
     #pragma ss stream
     #pragma ss dfg dedicated
     for (int i = 0; i < N; ++i) {
-      acc = a[i] * a[i];
+      acc += a[i] * a[i];
     }
+    double norm;
     #pragma ss dfg temporal
-	double norm;
-	{
-	  norm = 1.0 / acc;
-	}
+    {
+      norm = 1.0 / acc;
+      // norm = norm + norm;
+    }
     #pragma ss stream
     #pragma ss dfg dedicated
     for (int i = 0; i < N; ++i) {
-	  a[i] = a[i] * norm;
+      a[i] = a[i] * norm;
     }
   }
 }
@@ -39,6 +41,6 @@ int main() {
   kernel(a);
   end_roi();
   // Dump the simulation log
-  ss_stats();
+  sb_stats();
   return 0;
 }

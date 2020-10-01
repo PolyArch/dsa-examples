@@ -21,18 +21,22 @@ GCC   = riscv64-unknown-elf-g++
 
 # Transform code regions to be accelerated to decoupled spatial IR.
 dsa-%.bc: %.bc
-	SBCONFIG=$(SBCONFIG)                                \
-	$(OPT) -load $(SS_TOOLS)/lib/libStreamSpecialize.so \
+	SBCONFIG=$(SS)/spatial-scheduler/configs/revel-1x1.sbmodel \
+	$(OPT) -load $(SS)/dsa-llvm-project/build/lib/DSAPass.so   \
 		   -stream-specialize $< -o $@
 
 # Apply general-purpose optimization to clean up the LLVM IR. 
-ready-%.bc: %.bc
+O3-%.bc: %.bc
 	$(OPT) -O3 < $< > $@
 
 # Assembly code generation. Corresponding RISCV modeules should
 # be enabled in the mattr flags.
 %.s: %.bc
 	$(LLC) -mattr=+m,+f,+a,+c $<
+
+# For debugging purpose, dump bitcode to LLVM textformat.
+%.ll: %.bc
+	llvm-dis < $< > $@
 
 # Use GCC tools to link the assembly code to executable binaries.
 %.out: %.s

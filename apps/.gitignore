@@ -1,0 +1,16 @@
+# Simulation and visualization
+*/sched
+*/viz
+*/verif
+
+# Spatial Sw/Hw interfaces
+*/*.dfg
+*/*.dfg.h
+
+# All the LLVM IR
+*/*.bc
+*/*.ll
+
+# Compiled assembly stuff
+*/*.out
+*/*.s

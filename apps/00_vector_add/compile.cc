@@ -30,6 +30,6 @@ int main() {
   kernel(a, b, c);
   end_roi();
   // Dump the simulation log
-  ss_stats();
+  sb_stats();
   return 0;
 }
