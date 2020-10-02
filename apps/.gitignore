@@ -1,7 +1,9 @@
 # Simulation and visualization
 */sched
+*/stats
 */viz
 */verif
+*/m5out
 
 # Spatial Sw/Hw interfaces
 */*.dfg

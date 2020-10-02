@@ -11,7 +11,7 @@ void kernel(double* __restrict a) {
   #pragma ss config
   {
     double acc = 0.0;
-    #pragma ss stream
+    #pragma ss stream nonblock
     #pragma ss dfg dedicated
     for (int i = 0; i < N; ++i) {
       acc += a[i] * a[i];
