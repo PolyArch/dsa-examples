@@ -4,6 +4,7 @@
 */*/viz
 */*/verif
 */*/m5out
+*/*/stats
 
 # Spatial Sw/Hw interfaces
 */compile/*.dfg

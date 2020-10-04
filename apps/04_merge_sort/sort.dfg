@@ -1,0 +1,27 @@
+Input: A0
+Input: B0
+
+PRED0 = Compare64(A0, B0, self={0:b1, 1:b1, 2:b2, 3:d})
+O0    = Min64(A0, B0, ctrl=PRED0{0:b1, 1:b1, 2:b2, 3:d})
+
+Output: O0
+
+----
+
+Input: A1
+Input: B1
+
+PRED1 = Compare64(A1, B1, self={0:b1, 1:b1, 2:b2, 3:d})
+O1    = Min64(A1, B1, ctrl=PRED1{0:b1, 1:b1, 2:b2, 3:d})
+
+Output: O1
+
+----
+
+Input: A2
+Input: B2
+
+PRED2 = Compare64(A2, B2, self={0:b1, 1:b1, 2:b2, 3:d})
+O2    = Min64(A2, B2, ctrl=PRED2{0:b1, 1:b1, 2:b2, 3:d})
+
+Output: O2

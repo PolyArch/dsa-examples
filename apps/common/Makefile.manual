@@ -16,4 +16,4 @@ $(DFG_HEADER): %.dfg.h: %.dfg
 
 clean:
 	rm -f *.bc *.ll *.o *.out *.s *.dfg.h
-	rm -rf m5out sched viz verif
+	rm -rf m5out sched viz verif stats
