@@ -9,7 +9,7 @@ IFLAGS  = -I$(SS_TOOLS)/include               \
 
 
 $(DFG_HEADER): %.dfg.h: %.dfg
-	ss_sched $(SBCONFIG) $<
+	ss_sched -v -e 114514 $(SBCONFIG) $<
 
 %.out: %.cc $(DFG_HEADER)
 	$(GCC) $< $(IFLAGS) -o $@ -O3 -lm

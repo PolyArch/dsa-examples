@@ -8,7 +8,7 @@ using std::complex;
 using std::swap;
 
 #ifndef N
-#define N 1024
+#define N 512
 #endif
 
 #ifndef U
