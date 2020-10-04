@@ -1,0 +1,26 @@
+Input: A
+Input: SIGNAL
+
+TMP = FMul64(A, A)
+O = FAcc64(TMP, SIGNAL)
+
+Output: O
+
+----
+
+#pragma group temporal
+
+Input: NORM
+
+INV = FDiv64(1.0, NORM)
+
+Output: INV
+
+----
+
+Input: V
+Input: COEF
+
+RES = FMul64(V, COEF)
+
+Output: RES
