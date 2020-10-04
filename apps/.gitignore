@@ -1,18 +1,18 @@
 # Simulation and visualization
-*/sched
-*/stats
-*/viz
-*/verif
-*/m5out
+*/*/sched
+*/*/stats
+*/*/viz
+*/*/verif
+*/*/m5out
 
 # Spatial Sw/Hw interfaces
-*/*.dfg
-*/*.dfg.h
+*/compile/*.dfg
+*/*/*.dfg.h
 
 # All the LLVM IR
-*/*.bc
-*/*.ll
+*/*/*.bc
+*/*/*.ll
 
 # Compiled assembly stuff
-*/*.out
-*/*.s
+*/*/*.out
+*/*/*.s

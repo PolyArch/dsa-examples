@@ -44,3 +44,4 @@ O3-%.bc: %.bc
 
 clean:
 	rm -f *.bc *.ll *.o *.out *.s *.dfg.h *.dfg
+	rm -rf m5out sched viz verif
