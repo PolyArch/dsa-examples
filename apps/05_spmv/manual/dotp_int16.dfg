@@ -1,0 +1,17 @@
+Input: indA
+Input: indB
+Input: matchValA
+Input: matchValB
+
+# if match, output index. Otherwise, apply backpressure and discard
+matchIndA = Compare16(indA, indB, self={0:b1|d, 1:b2|d})
+matchIndB = matchIndA
+
+mult = Mul16(matchValA, matchValB)
+
+end  = Compare16(mult, 0)
+O    = Acc16(mult, ctrl=end{0:d,2:r})
+
+Output: matchIndA
+Output: matchIndB
+Output: O

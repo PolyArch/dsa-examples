@@ -5,11 +5,3 @@ PRED = Compare64(A, B, self={0:b1, 1:b1, 2:b2, 3:d})
 O    = Min64(A, B, ctrl=PRED{0:b1, 1:b1, 2:b2, 3:d})
 
 Output: O
-
-----
-
-Input: IN
-
-OUT = IN
-
-Output: OUT
