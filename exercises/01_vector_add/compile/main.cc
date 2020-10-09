@@ -8,13 +8,9 @@
 int64_t a[N], b[N], c[N];
 
 void kernel(int64_t* __restrict a, int64_t* __restrict b, int64_t* __restrict c) {
-  #pragma ss config
-  {
-    #pragma ss stream
-    #pragma ss dfg dedicated
-    for (int i = 0; i < N; ++i) {
-      c[i] = a[i] + b[i];
-    }
+  // Annotate the program with pragmas to compile.
+  for (int i = 0; i < N; ++i) {
+    c[i] = a[i] + b[i];
   }
 }
 
