@@ -1,0 +1,103 @@
+[{
+  "group": 0,
+  "id": 0,
+  "inputs": [],
+  "length": 1,
+  "name": "A",
+  "temporal": 0,
+  "width": 64
+}, {
+  "group": 0,
+  "id": 1,
+  "inputs": [],
+  "length": 1,
+  "name": "B",
+  "temporal": 0,
+  "width": 64
+}, {
+  "group": 0,
+  "id": 2,
+  "inputs": [],
+  "length": 1,
+  "name": "C",
+  "temporal": 0,
+  "width": 64
+}, {
+  "ctrl": 0,
+  "group": 0,
+  "id": 3,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 0,
+      "l": 0,
+      "r": 63,
+      "src_id": 0,
+      "src_val": 0
+    }],
+    "type": "data"
+  }, {
+    "edges": [{
+      "delay": 0,
+      "id": 1,
+      "l": 0,
+      "r": 63,
+      "src_id": 1,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "inst": "Add64",
+  "name": "(Add64 3)",
+  "op": 79,
+  "self": 0,
+  "temporal": 0
+}, {
+  "ctrl": 0,
+  "group": 0,
+  "id": 4,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 2,
+      "l": 0,
+      "r": 63,
+      "src_id": 3,
+      "src_val": 0
+    }],
+    "type": "data"
+  }, {
+    "edges": [{
+      "delay": 0,
+      "id": 3,
+      "l": 0,
+      "r": 63,
+      "src_id": 2,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "inst": "Mul64",
+  "name": "(Mul64 4)",
+  "op": 75,
+  "self": 0,
+  "temporal": 0
+}, {
+  "group": 0,
+  "id": 5,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 4,
+      "l": 0,
+      "r": 63,
+      "src_id": 4,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "length": 1,
+  "name": "O",
+  "temporal": 0,
+  "width": 64
+}]

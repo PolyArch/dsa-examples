@@ -1,0 +1,21 @@
+Digraph G { 
+newrank=true;
+ N0 [ label = "A\n lat=0 \n bounds=1000000 to 0\n vio=0", color= "black"]; 
+N0 -> N3[ color=black label = "l:3\nex:0\npt:00:63"];
+
+N1 [ label = "B\n lat=0 \n bounds=1000000 to 0\n vio=0", color= "black"]; 
+N1 -> N3[ color=black label = "l:3\nex:0\npt:00:63"];
+
+N2 [ label = "C\n lat=0 \n bounds=1000000 to 0\n vio=0", color= "black"]; 
+N2 -> N4[ color=black label = "l:2\nex:4\npt:00:63"];
+
+N3 [ label = "(Add64 3)\n lat=3 \n bounds=2 to 2\n vio=0", color= "black"]; 
+N3 -> N4[ color=black label = "l:3\nex:0\npt:00:63"];
+
+N4 [ label = "(Mul64 4)\n lat=6 \n bounds=5 to 5\n vio=0", color= "black"]; 
+N4 -> N5[ color=black label = "l:4\nex:0\npt:00:63"];
+
+N5 [ label = "O\n lat=9 \n bounds=9 to 9\n vio=0", color= "black"]; 
+
+	{ rank = same; N0 N1 N2 	{ rank = same; N5 }}
+}

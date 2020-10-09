@@ -1,0 +1,21 @@
+Digraph G { 
+newrank=true;
+ N0 [ label = "A", color= "black"]; 
+N0 -> N3[ color=black label = "0:63"];
+
+N1 [ label = "B", color= "black"]; 
+N1 -> N3[ color=black label = "0:63"];
+
+N2 [ label = "C", color= "black"]; 
+N2 -> N4[ color=black label = "0:63"];
+
+N3 [ label = "(Add64 3)", color= "black"]; 
+N3 -> N4[ color=black label = "0:63"];
+
+N4 [ label = "(Mul64 4)", color= "black"]; 
+N4 -> N5[ color=black label = "0:63"];
+
+N5 [ label = "O", color= "black"]; 
+
+	{ rank = same; N0 N1 N2 	{ rank = same; N5 }}
+}

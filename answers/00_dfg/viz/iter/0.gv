@@ -1,0 +1,443 @@
+digraph sched {
+IP1[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td port="C" border="1" bgcolor="#24c8f8">C</td></tr><tr><td border="1"> IP1 </td></tr><tr><td border="1"> IP1 </td></tr><tr><td border="1"> IP1 </td></tr><tr><td border="1"> IP1 </td></tr><tr><td border="1"> IP1 </td></tr><tr><td border="1"> IP1 </td></tr><tr><td border="1"> IP1 </td></tr>
+</table>>, pos = "6,6!", pin=true];
+IP16[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td port="A" border="1" bgcolor="#ea05e5">A</td></tr><tr><td border="1"> IP16 </td></tr><tr><td border="1"> IP16 </td></tr><tr><td border="1"> IP16 </td></tr><tr><td border="1"> IP16 </td></tr><tr><td border="1"> IP16 </td></tr><tr><td border="1"> IP16 </td></tr><tr><td border="1"> IP16 </td></tr>
+</table>>, pos = "-2,-6!", pin=true];
+IP20[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td port="B" border="1" bgcolor="#1cdfa8">B</td></tr><tr><td border="1"> IP20 </td></tr><tr><td border="1"> IP20 </td></tr><tr><td border="1"> IP20 </td></tr><tr><td border="1"> IP20 </td></tr><tr><td border="1"> IP20 </td></tr><tr><td border="1"> IP20 </td></tr><tr><td border="1"> IP20 </td></tr>
+</table>>, pos = "62,6!", pin=true];
+OP12[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> OP12 </td></tr><tr><td border="1"> OP12 </td></tr><tr><td border="1"> OP12 </td></tr><tr><td border="1"> OP12 </td></tr><tr><td border="1"> OP12 </td></tr><tr><td border="1"> OP12 </td></tr><tr><td border="1"> OP12 </td></tr>
+</table>>, pos = "22,-10!", pin=true];
+SW_0_0 [shape=diamond, pos = "0,4!", pin=true];
+SW_0_1 [shape=diamond, pos = "0,0!", pin=true];
+SW_0_2 [shape=diamond, pos = "0,-4!", pin=true];
+SW_0_3 [shape=diamond, pos = "0,-8!", pin=true];
+SW_0_4 [shape=diamond, pos = "0,-12!", pin=true];
+SW_0_5 [shape=diamond, pos = "0,-16!", pin=true];
+SW_1_0 [shape=diamond, pos = "4,4!", pin=true];
+SW_1_1 [shape=diamond, pos = "4,0!", pin=true];
+SW_1_2 [shape=diamond, pos = "4,-4!", pin=true];
+SW_1_3 [shape=diamond, pos = "4,-8!", pin=true];
+SW_1_4 [shape=diamond, pos = "4,-12!", pin=true];
+SW_1_5 [shape=diamond, pos = "4,-16!", pin=true];
+SW_2_0 [shape=diamond, pos = "8,4!", pin=true];
+SW_2_1 [shape=diamond, pos = "8,0!", pin=true];
+SW_2_2 [shape=diamond, pos = "8,-4!", pin=true];
+SW_2_3 [shape=diamond, pos = "8,-8!", pin=true];
+SW_2_4 [shape=diamond, pos = "8,-12!", pin=true];
+SW_2_5 [shape=diamond, pos = "8,-16!", pin=true];
+SW_3_0 [shape=diamond, pos = "12,4!", pin=true];
+SW_3_1 [shape=diamond, pos = "12,0!", pin=true];
+SW_3_2 [shape=diamond, pos = "12,-4!", pin=true];
+SW_3_3 [shape=diamond, pos = "12,-8!", pin=true];
+SW_3_4 [shape=diamond, pos = "12,-12!", pin=true];
+SW_3_5 [shape=diamond, pos = "12,-16!", pin=true];
+SW_4_0 [shape=diamond, pos = "16,4!", pin=true];
+SW_4_1 [shape=diamond, pos = "16,0!", pin=true];
+SW_4_2 [shape=diamond, pos = "16,-4!", pin=true];
+SW_4_3 [shape=diamond, pos = "16,-8!", pin=true];
+SW_4_4 [shape=diamond, pos = "16,-12!", pin=true];
+SW_4_5 [shape=diamond, pos = "16,-16!", pin=true];
+SW_5_0 [shape=diamond, pos = "20,4!", pin=true];
+SW_5_1 [shape=diamond, pos = "20,0!", pin=true];
+SW_5_2 [shape=diamond, pos = "20,-4!", pin=true];
+SW_5_3 [shape=diamond, pos = "20,-8!", pin=true];
+SW_5_4 [shape=diamond, pos = "20,-12!", pin=true];
+SW_5_5 [shape=diamond, pos = "20,-16!", pin=true];
+FU0_0[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU0_0 </td></tr><tr><td border="1"> FU0_0 </td></tr><tr><td border="1"> FU0_0 </td></tr><tr><td border="1"> FU0_0 </td></tr><tr><td border="1"> FU0_0 </td></tr><tr><td border="1"> FU0_0 </td></tr><tr><td border="1"> FU0_0 </td></tr><tr><td border="1"> FU0_0 </td></tr>
+</table>>, pos = "2,2!", pin=true];
+FU0_1[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU0_1 </td></tr><tr><td border="1"> FU0_1 </td></tr><tr><td border="1"> FU0_1 </td></tr><tr><td border="1"> FU0_1 </td></tr><tr><td border="1"> FU0_1 </td></tr><tr><td border="1"> FU0_1 </td></tr><tr><td border="1"> FU0_1 </td></tr><tr><td border="1"> FU0_1 </td></tr>
+</table>>, pos = "2,-2!", pin=true];
+FU0_2[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU0_2 </td></tr><tr><td border="1"> FU0_2 </td></tr><tr><td border="1"> FU0_2 </td></tr><tr><td border="1"> FU0_2 </td></tr><tr><td border="1"> FU0_2 </td></tr><tr><td border="1"> FU0_2 </td></tr><tr><td border="1"> FU0_2 </td></tr><tr><td border="1"> FU0_2 </td></tr>
+</table>>, pos = "2,-6!", pin=true];
+FU0_3[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU0_3 </td></tr><tr><td border="1"> FU0_3 </td></tr><tr><td border="1"> FU0_3 </td></tr><tr><td border="1"> FU0_3 </td></tr><tr><td border="1"> FU0_3 </td></tr><tr><td border="1"> FU0_3 </td></tr><tr><td border="1"> FU0_3 </td></tr><tr><td border="1"> FU0_3 </td></tr>
+</table>>, pos = "2,-10!", pin=true];
+FU0_4[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU0_4 </td></tr><tr><td border="1"> FU0_4 </td></tr><tr><td border="1"> FU0_4 </td></tr><tr><td border="1"> FU0_4 </td></tr><tr><td border="1"> FU0_4 </td></tr><tr><td border="1"> FU0_4 </td></tr><tr><td border="1"> FU0_4 </td></tr><tr><td border="1"> FU0_4 </td></tr>
+</table>>, pos = "2,-14!", pin=true];
+FU1_0[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU1_0 </td></tr><tr><td border="1"> FU1_0 </td></tr><tr><td border="1"> FU1_0 </td></tr><tr><td border="1"> FU1_0 </td></tr><tr><td border="1"> FU1_0 </td></tr><tr><td border="1"> FU1_0 </td></tr><tr><td border="1"> FU1_0 </td></tr><tr><td border="1"> FU1_0 </td></tr>
+</table>>, pos = "6,2!", pin=true];
+FU1_1[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU1_1 </td></tr><tr><td border="1"> FU1_1 </td></tr><tr><td border="1"> FU1_1 </td></tr><tr><td border="1"> FU1_1 </td></tr><tr><td border="1"> FU1_1 </td></tr><tr><td border="1"> FU1_1 </td></tr><tr><td border="1"> FU1_1 </td></tr><tr><td border="1"> FU1_1 </td></tr>
+</table>>, pos = "6,-2!", pin=true];
+FU1_2[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU1_2 </td></tr><tr><td border="1"> FU1_2 </td></tr><tr><td border="1"> FU1_2 </td></tr><tr><td border="1"> FU1_2 </td></tr><tr><td border="1"> FU1_2 </td></tr><tr><td border="1"> FU1_2 </td></tr><tr><td border="1"> FU1_2 </td></tr><tr><td border="1"> FU1_2 </td></tr>
+</table>>, pos = "6,-6!", pin=true];
+FU1_3[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU1_3 </td></tr><tr><td border="1"> FU1_3 </td></tr><tr><td border="1"> FU1_3 </td></tr><tr><td border="1"> FU1_3 </td></tr><tr><td border="1"> FU1_3 </td></tr><tr><td border="1"> FU1_3 </td></tr><tr><td border="1"> FU1_3 </td></tr><tr><td border="1"> FU1_3 </td></tr>
+</table>>, pos = "6,-10!", pin=true];
+FU1_4[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU1_4 </td></tr><tr><td border="1"> FU1_4 </td></tr><tr><td border="1"> FU1_4 </td></tr><tr><td border="1"> FU1_4 </td></tr><tr><td border="1"> FU1_4 </td></tr><tr><td border="1"> FU1_4 </td></tr><tr><td border="1"> FU1_4 </td></tr><tr><td border="1"> FU1_4 </td></tr>
+</table>>, pos = "6,-14!", pin=true];
+FU2_0[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td port="(Mul64 4)" border="1" bgcolor="#1e8c9d">(Mul64 4)</td></tr><tr><td border="1"> FU2_0 </td></tr><tr><td border="1"> FU2_0 </td></tr><tr><td border="1"> FU2_0 </td></tr><tr><td border="1"> FU2_0 </td></tr><tr><td border="1"> FU2_0 </td></tr><tr><td border="1"> FU2_0 </td></tr><tr><td border="1"> FU2_0 </td></tr>
+</table>>, pos = "10,2!", pin=true];
+FU2_1[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td port="(Add64 3)" border="1" bgcolor="#cbb4e4">(Add64 3)</td></tr><tr><td border="1"> FU2_1 </td></tr><tr><td border="1"> FU2_1 </td></tr><tr><td border="1"> FU2_1 </td></tr><tr><td border="1"> FU2_1 </td></tr><tr><td border="1"> FU2_1 </td></tr><tr><td border="1"> FU2_1 </td></tr><tr><td border="1"> FU2_1 </td></tr>
+</table>>, pos = "10,-2!", pin=true];
+FU2_2[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU2_2 </td></tr><tr><td border="1"> FU2_2 </td></tr><tr><td border="1"> FU2_2 </td></tr><tr><td border="1"> FU2_2 </td></tr><tr><td border="1"> FU2_2 </td></tr><tr><td border="1"> FU2_2 </td></tr><tr><td border="1"> FU2_2 </td></tr><tr><td border="1"> FU2_2 </td></tr>
+</table>>, pos = "10,-6!", pin=true];
+FU2_3[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU2_3 </td></tr><tr><td border="1"> FU2_3 </td></tr><tr><td border="1"> FU2_3 </td></tr><tr><td border="1"> FU2_3 </td></tr><tr><td border="1"> FU2_3 </td></tr><tr><td border="1"> FU2_3 </td></tr><tr><td border="1"> FU2_3 </td></tr><tr><td border="1"> FU2_3 </td></tr>
+</table>>, pos = "10,-10!", pin=true];
+FU2_4[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU2_4 </td></tr><tr><td border="1"> FU2_4 </td></tr><tr><td border="1"> FU2_4 </td></tr><tr><td border="1"> FU2_4 </td></tr><tr><td border="1"> FU2_4 </td></tr><tr><td border="1"> FU2_4 </td></tr><tr><td border="1"> FU2_4 </td></tr><tr><td border="1"> FU2_4 </td></tr>
+</table>>, pos = "10,-14!", pin=true];
+FU3_0[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU3_0 </td></tr><tr><td border="1"> FU3_0 </td></tr><tr><td border="1"> FU3_0 </td></tr><tr><td border="1"> FU3_0 </td></tr><tr><td border="1"> FU3_0 </td></tr><tr><td border="1"> FU3_0 </td></tr><tr><td border="1"> FU3_0 </td></tr><tr><td border="1"> FU3_0 </td></tr>
+</table>>, pos = "14,2!", pin=true];
+FU3_1[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU3_1 </td></tr><tr><td border="1"> FU3_1 </td></tr><tr><td border="1"> FU3_1 </td></tr><tr><td border="1"> FU3_1 </td></tr><tr><td border="1"> FU3_1 </td></tr><tr><td border="1"> FU3_1 </td></tr><tr><td border="1"> FU3_1 </td></tr><tr><td border="1"> FU3_1 </td></tr>
+</table>>, pos = "14,-2!", pin=true];
+FU3_2[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU3_2 </td></tr><tr><td border="1"> FU3_2 </td></tr><tr><td border="1"> FU3_2 </td></tr><tr><td border="1"> FU3_2 </td></tr><tr><td border="1"> FU3_2 </td></tr><tr><td border="1"> FU3_2 </td></tr><tr><td border="1"> FU3_2 </td></tr><tr><td border="1"> FU3_2 </td></tr>
+</table>>, pos = "14,-6!", pin=true];
+FU3_3[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU3_3 </td></tr><tr><td border="1"> FU3_3 </td></tr><tr><td border="1"> FU3_3 </td></tr><tr><td border="1"> FU3_3 </td></tr><tr><td border="1"> FU3_3 </td></tr><tr><td border="1"> FU3_3 </td></tr><tr><td border="1"> FU3_3 </td></tr><tr><td border="1"> FU3_3 </td></tr>
+</table>>, pos = "14,-10!", pin=true];
+FU3_4[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU3_4 </td></tr><tr><td border="1"> FU3_4 </td></tr><tr><td border="1"> FU3_4 </td></tr><tr><td border="1"> FU3_4 </td></tr><tr><td border="1"> FU3_4 </td></tr><tr><td border="1"> FU3_4 </td></tr><tr><td border="1"> FU3_4 </td></tr><tr><td border="1"> FU3_4 </td></tr>
+</table>>, pos = "14,-14!", pin=true];
+FU4_0[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU4_0 </td></tr><tr><td border="1"> FU4_0 </td></tr><tr><td border="1"> FU4_0 </td></tr><tr><td border="1"> FU4_0 </td></tr><tr><td border="1"> FU4_0 </td></tr><tr><td border="1"> FU4_0 </td></tr><tr><td border="1"> FU4_0 </td></tr><tr><td border="1"> FU4_0 </td></tr>
+</table>>, pos = "18,2!", pin=true];
+FU4_1[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU4_1 </td></tr><tr><td border="1"> FU4_1 </td></tr><tr><td border="1"> FU4_1 </td></tr><tr><td border="1"> FU4_1 </td></tr><tr><td border="1"> FU4_1 </td></tr><tr><td border="1"> FU4_1 </td></tr><tr><td border="1"> FU4_1 </td></tr><tr><td border="1"> FU4_1 </td></tr>
+</table>>, pos = "18,-2!", pin=true];
+FU4_2[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU4_2 </td></tr><tr><td border="1"> FU4_2 </td></tr><tr><td border="1"> FU4_2 </td></tr><tr><td border="1"> FU4_2 </td></tr><tr><td border="1"> FU4_2 </td></tr><tr><td border="1"> FU4_2 </td></tr><tr><td border="1"> FU4_2 </td></tr><tr><td border="1"> FU4_2 </td></tr>
+</table>>, pos = "18,-6!", pin=true];
+FU4_3[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU4_3 </td></tr><tr><td border="1"> FU4_3 </td></tr><tr><td border="1"> FU4_3 </td></tr><tr><td border="1"> FU4_3 </td></tr><tr><td border="1"> FU4_3 </td></tr><tr><td border="1"> FU4_3 </td></tr><tr><td border="1"> FU4_3 </td></tr><tr><td border="1"> FU4_3 </td></tr>
+</table>>, pos = "18,-10!", pin=true];
+FU4_4[shape=plaintext, label = <<table border="0" cellspacing="0"><tr><td border="1"> FU4_4 </td></tr><tr><td border="1"> FU4_4 </td></tr><tr><td border="1"> FU4_4 </td></tr><tr><td border="1"> FU4_4 </td></tr><tr><td border="1"> FU4_4 </td></tr><tr><td border="1"> FU4_4 </td></tr><tr><td border="1"> FU4_4 </td></tr><tr><td border="1"> FU4_4 </td></tr>
+</table>>, pos = "18,-14!", pin=true];
+FU0_0->SW_1_1 [color=gray style=dotted, label="" fontcolor=gray]
+FU0_1->SW_1_2 [color=gray style=dotted, label="" fontcolor=gray]
+FU0_2->SW_1_3 [color=gray style=dotted, label="" fontcolor=gray]
+FU0_3->SW_1_4 [color=gray style=dotted, label="" fontcolor=gray]
+FU0_4->SW_1_5 [color=gray style=dotted, label="" fontcolor=gray]
+FU1_0->SW_2_1 [color=gray style=dotted, label="" fontcolor=gray]
+FU1_1->SW_2_2 [color=gray style=dotted, label="" fontcolor=gray]
+FU1_2->SW_2_3 [color=gray style=dotted, label="" fontcolor=gray]
+FU1_3->SW_2_4 [color=gray style=dotted, label="" fontcolor=gray]
+FU1_4->SW_2_5 [color=gray style=dotted, label="" fontcolor=gray]
+FU2_0->SW_3_1 [color="#1e8c9d"  label="D:0/0 "];
+FU2_1->SW_3_2 [color="#cbb4e4"  label="D:0/15 "];
+FU2_2->SW_3_3 [color=gray style=dotted, label="" fontcolor=gray]
+FU2_3->SW_3_4 [color=gray style=dotted, label="" fontcolor=gray]
+FU2_4->SW_3_5 [color=gray style=dotted, label="" fontcolor=gray]
+FU3_0->SW_4_1 [color=gray style=dotted, label="" fontcolor=gray]
+FU3_1->SW_4_2 [color=gray style=dotted, label="" fontcolor=gray]
+FU3_2->SW_4_3 [color=gray style=dotted, label="" fontcolor=gray]
+FU3_3->SW_4_4 [color=gray style=dotted, label="" fontcolor=gray]
+FU3_4->SW_4_5 [color=gray style=dotted, label="" fontcolor=gray]
+FU4_0->SW_5_1 [color=gray style=dotted, label="" fontcolor=gray]
+FU4_1->SW_5_2 [color=gray style=dotted, label="" fontcolor=gray]
+FU4_2->SW_5_3 [color=gray style=dotted, label="" fontcolor=gray]
+FU4_3->SW_5_4 [color=gray style=dotted, label="" fontcolor=gray]
+FU4_4->SW_5_5 [color=gray style=dotted, label="" fontcolor=gray]
+FU4_4->SW_4_4 [color=gray style=dotted, label="" fontcolor=gray]
+FU4_4->SW_5_4 [color=gray style=dotted, label="" fontcolor=gray]
+FU4_4->SW_4_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_0->FU0_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_0->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_0->SW_0_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_1->FU0_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_1->FU0_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_1->SW_0_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_1->SW_1_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_1->SW_0_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_2->FU0_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_2->FU0_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_2->SW_0_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_2->SW_1_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_2->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_3->FU0_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_3->FU0_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_3->SW_0_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_3->SW_1_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_3->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_4->FU0_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_4->FU0_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_4->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_4->SW_1_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_4->SW_0_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_5->FU0_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_5->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_0_5->SW_1_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_0->FU0_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_0->FU1_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_0->SW_0_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_0->SW_2_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_0->SW_1_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_1->FU0_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_1->FU0_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_1->FU1_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_1->FU1_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_1->SW_0_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_1->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_1->SW_2_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_1->SW_1_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_2->FU0_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_2->FU0_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_2->FU1_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_2->FU1_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_2->SW_0_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_2->SW_1_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_2->SW_2_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_2->SW_1_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_3->FU0_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_3->FU0_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_3->FU1_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_3->FU1_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_3->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_3->SW_1_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_3->SW_2_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_3->SW_1_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_4->FU0_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_4->FU0_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_4->FU1_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_4->FU1_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_4->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_4->SW_1_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_4->SW_2_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_4->SW_1_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->FU0_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->FU1_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->SW_0_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->SW_1_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->SW_2_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->OP0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->OP1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->OP2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->OP3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_1_5->OP9 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_0->FU1_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_0->FU2_0 [color="#24c8f8"  label="D:4/15 "];
+SW_2_0->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_0->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_0->SW_2_1 [color="#ea05e5"  label="D:0/15 "];
+SW_2_1->FU1_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_1->FU1_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_1->FU2_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_1->FU2_1 [color="#ea05e5"  label="D:0/15 "];
+SW_2_1->SW_1_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_1->SW_2_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_1->SW_3_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_1->SW_2_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_2->FU1_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_2->FU1_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_2->FU2_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_2->FU2_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_2->SW_1_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_2->SW_2_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_2->SW_3_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_2->SW_2_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_3->FU1_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_3->FU1_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_3->FU2_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_3->FU2_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_3->SW_1_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_3->SW_2_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_3->SW_3_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_3->SW_2_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_4->FU1_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_4->FU1_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_4->FU2_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_4->FU2_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_4->SW_1_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_4->SW_2_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_4->SW_3_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_4->SW_2_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->FU1_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->FU2_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->SW_1_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->SW_2_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->SW_3_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->OP0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->OP0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->OP4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->OP9 [color=gray style=dotted, label="" fontcolor=gray]
+SW_2_5->OP10 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_0->FU2_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_0->FU3_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_0->SW_2_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_0->SW_4_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_0->SW_3_1 [color="#1cdfa8"  label="D:0/15 "];
+SW_3_1->FU2_0 [color="#cbb4e4"  label="D:0/15 "];
+SW_3_1->FU2_1 [color="#1cdfa8"  label="D:0/15 "];
+SW_3_1->FU3_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_1->FU3_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_1->SW_2_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_1->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_1->SW_4_1 [color="#1e8c9d"  label="D:0/0 "];
+SW_3_1->SW_3_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_2->FU2_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_2->FU2_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_2->FU3_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_2->FU3_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_2->SW_2_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_2->SW_3_1 [color="#cbb4e4"  label="D:0/15 "];
+SW_3_2->SW_4_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_2->SW_3_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_3->FU2_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_3->FU2_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_3->FU3_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_3->FU3_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_3->SW_2_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_3->SW_3_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_3->SW_4_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_3->SW_3_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_4->FU2_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_4->FU2_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_4->FU3_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_4->FU3_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_4->SW_2_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_4->SW_3_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_4->SW_4_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_4->SW_3_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->FU2_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->FU3_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->SW_2_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->SW_3_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->SW_4_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->OP0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->OP1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->OP5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->OP6 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->OP10 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->OP12 [color=gray style=dotted, label="" fontcolor=gray]
+SW_3_5->OP13 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_0->FU3_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_0->FU4_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_0->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_0->SW_5_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_0->SW_4_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_1->FU3_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_1->FU3_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_1->FU4_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_1->FU4_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_1->SW_3_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_1->SW_4_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_1->SW_5_1 [color="#1e8c9d"  label="D:0/0 "];
+SW_4_1->SW_4_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_2->FU3_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_2->FU3_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_2->FU4_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_2->FU4_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_2->SW_3_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_2->SW_4_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_2->SW_5_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_2->SW_4_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_3->FU3_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_3->FU3_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_3->FU4_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_3->FU4_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_3->SW_3_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_3->SW_4_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_3->SW_5_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_3->SW_4_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_4->FU3_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_4->FU3_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_4->FU4_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_4->FU4_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_4->SW_3_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_4->SW_4_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_4->SW_5_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_4->SW_4_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->FU3_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->FU4_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->SW_3_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->SW_4_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->SW_5_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->OP0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->OP1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->OP7 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->OP11 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->OP11 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->OP12 [color=gray style=dotted, label="" fontcolor=gray]
+SW_4_5->OP13 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_0->FU4_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_0->SW_4_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_0->SW_5_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_1->FU4_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_1->FU4_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_1->SW_4_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_1->SW_5_0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_1->SW_5_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_1->OP12 [color="#1e8c9d"  label="D:0/0 "];
+SW_5_1->OP13 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->FU4_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->FU4_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->SW_4_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->SW_5_1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->SW_5_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->OP12 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->OP12 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->OP13 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_2->OP13 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->FU4_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->FU4_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->SW_4_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->SW_5_2 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->SW_5_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->OP0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->OP12 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->OP12 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->OP13 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_3->OP13 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_4->FU4_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_4->FU4_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_4->SW_4_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_4->SW_5_3 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_4->SW_5_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_4->OP0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_4->OP12 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_4->OP13 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_5->FU4_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_5->SW_4_5 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_5->SW_5_4 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_5->OP0 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_5->OP1 [color=gray style=dotted, label="" fontcolor=gray]
+SW_5_5->OP8 [color=gray style=dotted, label="" fontcolor=gray]
+IP0->SW_0_5 [color=gray style=dotted, label="" fontcolor=gray]
+IP0->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+IP0->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+IP0->SW_0_2 [color=gray style=dotted, label="" fontcolor=gray]
+IP0->SW_0_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP0->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP0->SW_2_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP0->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP1->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+IP1->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+IP1->SW_0_2 [color=gray style=dotted, label="" fontcolor=gray]
+IP1->SW_0_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP1->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP1->SW_2_0 [color="#24c8f8"  label="D:4/15 "];
+IP1->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP1->SW_5_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP2->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+IP2->SW_0_2 [color=gray style=dotted, label="" fontcolor=gray]
+IP2->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP2->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP3->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+IP3->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP3->SW_2_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP3->SW_5_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP4->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+IP5->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+IP6->SW_0_1 [color=gray style=dotted, label="" fontcolor=gray]
+IP7->SW_0_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP8->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP9->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP10->SW_4_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP11->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+IP11->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+IP12->SW_0_2 [color=gray style=dotted, label="" fontcolor=gray]
+IP12->SW_0_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP13->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP13->SW_2_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP14->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP14->SW_5_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP15->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+IP15->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP16->SW_0_5 [color=gray style=dotted, label="" fontcolor=gray]
+IP16->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+IP16->SW_0_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP16->SW_2_0 [color="#ea05e5"  label="D:0/15 "];
+IP17->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+IP17->SW_0_2 [color=gray style=dotted, label="" fontcolor=gray]
+IP17->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP17->SW_3_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP18->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+IP18->SW_0_1 [color=gray style=dotted, label="" fontcolor=gray]
+IP18->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP18->SW_4_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP19->SW_0_4 [color=gray style=dotted, label="" fontcolor=gray]
+IP19->SW_1_0 [color=gray style=dotted, label="" fontcolor=gray]
+IP20->SW_0_3 [color=gray style=dotted, label="" fontcolor=gray]
+IP20->SW_3_0 [color="#1cdfa8"  label="D:0/15 "];
+}
+
