@@ -1,16 +1,22 @@
-Input: indA
-Input: indB
-Input: matchValA
-Input: matchValB
+Input16: indA
+Input16: indB
+Input16: matchValA
+Input16: matchValB
 
-# if match, output index. Otherwise, apply backpressure and discard
-matchIndA = Compare16(indA, indB, self={0:b1|d, 1:b2|d})
-matchIndB = matchIndA
+# generate predicate whether indices match (0 for match and 3 for end)
+pred = Compare16(indA, indB, self={1:b1, 2:b2})
 
+# returns the matched indices
+matched = Min16(indA, indB, ctrl=pred{1:b1|d, 2:b2|d, 3:d})
+matchIndA = matched
+matchIndB = matched 
+
+# performs multiplication for the matched indices
 mult = Mul16(matchValA, matchValB)
 
-end  = Compare16(mult, 0)
-O    = Acc16(mult, ctrl=end{0:d,2:r})
+# only output if it is a match or end
+done = Keep16(pred, 1, ctrl=pred{1:d,2:d})
+O    = Acc16(mult, 0, ctrl=done{0:d,3:r})
 
 Output: matchIndA
 Output: matchIndB

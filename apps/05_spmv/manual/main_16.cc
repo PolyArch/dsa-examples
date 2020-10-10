@@ -10,8 +10,9 @@
 #define DTYPE int16_t
 #define sentinel SENTINAL16
 
-#define N 512 // matrix dim
-#define M 512 // vector dim
+
+#define N 64 // matrix dim
+#define M 64 // vector dim
 #define sp 0.1
 
 // input matrix -- CSR format
@@ -56,7 +57,7 @@ void dotp_impl(int row) {
 
 void spmv() {
   SS_CONFIG(dotp_int16_config, dotp_int16_size);
-  dotp_impl(0); // 0.54 with this, otherwise 0.21
+  // dotp_impl(0);
   for (int row = 0; row < N; ++row) {
     dotp_impl(row);
   }
