@@ -6,12 +6,11 @@ Input: matchValB
 # generate predicate whether indices match (0 for match and 3 for end)
 pred = Compare64(indA, indB, self={1:b1, 2:b2})
 
-# cntIndA = Acc(1)
-# cntIndB = Acc(1)
-# matched = Min64(cntIndA, cntIndB, ctrl=pred{1:b1|d, 2:b2|d, 3:d})
+cntIndA = Acc64(1, 0, ctrl=pred{1:a}) # if b1, then do not increment
+cntIndB = Acc64(1, 0, ctrl=pred{2:a})
+matched = Min64(cntIndA, cntIndB, ctrl=pred{1:b1|d, 2:b2|d, 3:d})
 
 # returns the matched indices
-matched = Min64(indA, indB, ctrl=pred{1:b1|d, 2:b2|d, 3:d})
 matchIndA = matched
 matchIndB = matched 
 
