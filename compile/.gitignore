@@ -1,0 +1,8 @@
+sched/*
+viz/*
+stats/*
+verif/*
+m5out/*
+*.dfg
+*.dfg.h
+*.out
