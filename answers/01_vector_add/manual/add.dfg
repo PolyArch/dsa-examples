@@ -1,6 +1,0 @@
-Input: A
-Input: B
-
-C = Add64(A, B)
-
-Output: C

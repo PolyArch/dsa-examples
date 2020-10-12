@@ -1,0 +1,207 @@
+[{
+  "group": 0,
+  "id": 0,
+  "inputs": [],
+  "length": 1,
+  "name": "sub0_v0",
+  "temporal": 0,
+  "width": 64
+}, {
+  "group": 0,
+  "id": 1,
+  "inputs": [],
+  "length": 1,
+  "name": "sub0_v1",
+  "temporal": 0,
+  "width": 64
+}, {
+  "ctrl": 0,
+  "group": 0,
+  "id": 2,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 0,
+      "l": 0,
+      "r": 63,
+      "src_id": 0,
+      "src_val": 0
+    }],
+    "type": "data"
+  }, {
+    "edges": [{
+      "delay": 0,
+      "id": 1,
+      "l": 0,
+      "r": 63,
+      "src_id": 1,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "inst": "FMul64",
+  "name": "(FMul64 2)",
+  "op": 155,
+  "self": 0,
+  "temporal": 0
+}, {
+  "group": 0,
+  "id": 3,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 2,
+      "l": 0,
+      "r": 63,
+      "src_id": 2,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "length": 1,
+  "name": "sub0_v2",
+  "temporal": 0,
+  "width": 64
+}, {
+  "group": 1,
+  "id": 4,
+  "inputs": [],
+  "length": 1,
+  "name": "sub1_v0",
+  "temporal": 0,
+  "width": 64
+}, {
+  "group": 1,
+  "id": 5,
+  "inputs": [],
+  "length": 1,
+  "name": "sub1_v1",
+  "temporal": 0,
+  "width": 64
+}, {
+  "ctrl": 0,
+  "group": 1,
+  "id": 6,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 3,
+      "l": 0,
+      "r": 63,
+      "src_id": 4,
+      "src_val": 0
+    }],
+    "type": "data"
+  }, {
+    "edges": [{
+      "delay": 0,
+      "id": 4,
+      "l": 0,
+      "r": 63,
+      "src_id": 4,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "inst": "FMul64",
+  "name": "(FMul64 6)",
+  "op": 155,
+  "self": 0,
+  "temporal": 0
+}, {
+  "ctrl": 0,
+  "group": 1,
+  "id": 7,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 5,
+      "l": 0,
+      "r": 63,
+      "src_id": 6,
+      "src_val": 0
+    }],
+    "type": "data"
+  }, {
+    "edges": [{
+      "delay": 0,
+      "id": 6,
+      "l": 0,
+      "r": 63,
+      "src_id": 5,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "inst": "FAcc64",
+  "name": "(FAcc64 7)",
+  "op": 94,
+  "self": 0,
+  "temporal": 0
+}, {
+  "group": 1,
+  "id": 8,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 7,
+      "l": 0,
+      "r": 63,
+      "src_id": 7,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "length": 1,
+  "name": "sub1_v3",
+  "temporal": 0,
+  "width": 64
+}, {
+  "group": 2,
+  "id": 9,
+  "inputs": [],
+  "length": 1,
+  "name": "sub2_v0",
+  "temporal": 1,
+  "width": 64
+}, {
+  "ctrl": 0,
+  "group": 2,
+  "id": 10,
+  "inputs": [{
+    "imm": 4607182418800017408
+  }, {
+    "edges": [{
+      "delay": 0,
+      "id": 8,
+      "l": 0,
+      "r": 63,
+      "src_id": 9,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "inst": "FDiv64",
+  "name": "(FDiv64 10)",
+  "op": 156,
+  "self": 0,
+  "temporal": 1
+}, {
+  "group": 2,
+  "id": 11,
+  "inputs": [{
+    "edges": [{
+      "delay": 0,
+      "id": 9,
+      "l": 0,
+      "r": 63,
+      "src_id": 10,
+      "src_val": 0
+    }],
+    "type": "data"
+  }],
+  "length": 1,
+  "name": "sub2_v1",
+  "temporal": 1,
+  "width": 64
+}]

@@ -1,0 +1,48 @@
+#pragma group frequency 255
+# From Inst: [0x562269d66050] StreamInPort (0)  %div = fdiv double 1.000000e+00, %add
+#pragma cmd=1
+#pragma repeat=0
+Input64: sub0_v0
+# From Inst: [0x562269d661c0] MemPort (0)  %3 = load double, double* %arrayidx9, align 8, !tbaa !4
+#pragma cmd=1
+#pragma repeat=0
+Input64: sub0_v1
+# [0x562269d664d0] ComputeBody (0)  %mul10 = fmul double %div, %3
+sub0_v2 = FMul64(sub0_v0, sub0_v1)
+# From Inst: [0x562269d66270] PortMem (0)  store double %mul10, double* %arrayidx9, align 8, !tbaa !4
+#pragma cmd=1
+#pragma repeat=0
+Output64: sub0_v2
+
+----
+
+#pragma group frequency 255
+# From Inst: [0x562269d663a0] MemPort (0)  %2 = load double, double* %arrayidx, align 8, !tbaa !4
+#pragma cmd=1
+#pragma repeat=0
+Input64: sub1_v0
+# [Control Signal][0x562269d665f0] Accumulator (0)  %add = fadd double %acc.032, %mul
+Input: sub1_v1
+# [0x562269d66450] ComputeBody (0)  %mul = fmul double %2, %2
+sub1_v2 = FMul64(sub1_v0, sub1_v0)
+# [0x562269d665f0] Accumulator (0)  %add = fadd double %acc.032, %mul
+sub1_v3 = FAcc64(sub1_v2, sub1_v1)
+# From Inst: [0x562269d666a0] StreamOutPort (0)  %add = fadd double %acc.032, %mul
+#pragma cmd=1
+#pragma repeat=0
+Output64: sub1_v3
+
+----
+
+#pragma group temporal
+#pragma group frequency 8
+# From Inst: [0x562269d66760] StreamInPort (0)  %add = fadd double %acc.032, %mul
+#pragma cmd=1
+#pragma repeat=0
+Input64: sub2_v0
+# [0x562269d66810] ComputeBody (0)  %div = fdiv double 1.000000e+00, %add
+sub2_v1 = FDiv64(4607182418800017408, sub2_v0)
+# From Inst: [0x562269d66880] StreamOutPort (0)  %div = fdiv double 1.000000e+00, %add
+#pragma cmd=1
+#pragma repeat=0
+Output64: sub2_v1
