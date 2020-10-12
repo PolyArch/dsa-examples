@@ -1,0 +1,15 @@
+*/sched
+*/viz
+*/stats
+*/verif
+*/m5out
+*.dfg.h
+*.out
+
+*/*/sched
+*/*/viz
+*/*/stats
+*/*/verif
+*/*/m5out
+*/*.dfg.h
+*/*.out
