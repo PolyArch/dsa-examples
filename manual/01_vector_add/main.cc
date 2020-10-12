@@ -6,12 +6,12 @@
 
 #include "./add.dfg.h"
 
-#define N 128
+#define N 512
 
 int64_t a[N], b[N], c[N];
 
 void kernel(int64_t* __restrict a, int64_t* __restrict b, int64_t* __restrict c) {
-  // Write your host control here!
+  // Fill your implementation here.
 }
 
 int main() {

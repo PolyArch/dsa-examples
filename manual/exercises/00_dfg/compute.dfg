@@ -1,8 +1,0 @@
-Input: A
-Input: B
-Input: C
-
-TMP = Add64(A, B)
-O = Mul64(TMP, C)
-
-Output: O
