@@ -1,2 +1,2 @@
 #!/bin/bash
-source ../../../common/run.sh
+source ../../common/run.sh

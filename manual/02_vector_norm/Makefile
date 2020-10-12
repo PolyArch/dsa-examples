@@ -1,3 +1,3 @@
 DFG = compute.dfg
 
-include ../../../common/Makefile.manual
+include ../../common/Makefile.manual
