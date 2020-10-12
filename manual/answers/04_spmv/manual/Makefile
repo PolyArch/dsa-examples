@@ -1,3 +1,3 @@
 DFG = dotp.dfg
 
-include ../../common/Makefile.manual
+include ../../../../common/Makefile.manual
