@@ -15,8 +15,8 @@ void kernel(double* __restrict a) {
   // Compute the norm
   SS_DMA_READ(a, 8, 8, N, P_compute_A);
   // NOTE: Streams detinated the same port will be enforced in the order they appear.
-  SS_CONST(P_compute_SIGNAL, 2, N - 1);
-  SS_CONST(P_compute_SIGNAL, 1, 1);
+  SS_CONST(P_compute_SIGNAL, 1, N - 1);
+  SS_CONST(P_compute_SIGNAL, 0, 1);
   // Forward the norm to the inverse
   SS_RECURRENCE(P_compute_O, P_compute_NORM, 1);
   // Normalize the vector by the inversed norm

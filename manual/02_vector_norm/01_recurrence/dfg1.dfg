@@ -1,0 +1,6 @@
+Input: NORM
+
+INV = FDiv64(1.0, NORM)
+
+Output: INV
+

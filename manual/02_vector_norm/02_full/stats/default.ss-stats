@@ -1,0 +1,56 @@
+
+ACCEL 0 STATS ***
+Commands Issued: 7
+CGRA Instances: 257 -- Activity Ratio: 0.938, DFGs / Cycle: 0.938
+For backcgra, Average thoughput of all ports (overall): 0.3127, CGRA outputs/cgra busy cycles: 1
+CGRA Insts / Computation Instance: 1.498
+CGRA Insts / Cycle: 1.405 (overall activity factor)
+Mapped DFG utilization: 0.3513
+Data availability ratio: 0
+input port imbalance (%age dgra nodes could not fire): 0
+Percentage bank conflicts: -nan
+L1 cache hit rate: 0
+Avg wait cycles on a byte read: 8.301
+Percentage cycles spent due to conflict in atomic scr: -nan
+Cycle Breakdown: CONFIG:0.0474 ISSUED:0.4672 ISSUED_MULTI:0.4672 TEMPORAL_ONLY:0.0036 CONST_FILL:0.0000 SCR_FILL:0.0000 DMA_FILL:0.0036 REC_WAIT:0.0000 CORE_WAIT:0.0073 SCR_BAR_WAIT:0.0000 DMA_WRITE:0.0000 CMD_QUEUE:0.0073 CGRA_BACK:0.0000 DRAIN:0.0000 NOT_IN_USE:0.0000 
+Bandwidth Table: (B/c=Bytes/cycle, B/r=Bytes/request) -- Breakdown (sources/destinatinos): 
+SP_READ:	(0 B/c, 0 B/r)  -- 
+SP_WRITE:	(0 B/c, 0 B/r)  -- 
+DMA_LOAD:	0.124(7.47B/c, 60.2B/r)  -- port:0.124(7.47B/c, 60.2B/r) 
+DMA_STORE:	0.467(3.74B/c, 8B/r)  -- port:0.467(3.74B/c, 8B/r) 
+REC_BUS_READ:	0.489(7.59B/c, 15.5B/r)  -- port:0.0146(0.117B/c, 8B/r) const:0.474(7.47B/c, 15.8B/r) 
+NETWORK:	(0 B/c, 0 B/r)  -- 
+L2 accesses per cycle: 0.591
+
+L2 misses per cycle:       0
+
+CGRA Activity Histogram (inst/switch:times used)
+
+ Port Activity Histogram (size:times used)
+ 
+ Stream Length Statistics
+Volume  by orig->dest:
+dma->port: 0.11
+port->dma: 0.053
+port->port: 0
+const->port: 0.84
+   by pattern type:
+PURE_CONTIG: 0
+REPEATED: 0
+STRIDE: 0
+OVERLAP: 0
+CONST: 0.84
+REC: 0
+IND: 0
+NONE: 0.16
+NONE: 0
+    by len (log2 bins):
+1: 0(2 to 3)
+2: 0(4 to 7)
+3: 0(8 to 15)
+4: 16(16 to 31)
+5: 0(32 to 63)
+6: 0(64 to 127)
+7: 384(128 to 255)
+8: 0(256 to 511)
+9: 0(512 to 1023)

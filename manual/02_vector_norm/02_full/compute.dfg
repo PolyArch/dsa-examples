@@ -2,7 +2,7 @@ Input: A
 Input: SIGNAL
 
 TMP = FMul64(A, A)
-O = FAcc64(TMP, SIGNAL)
+O = FAccumulate64(TMP, ctrl=SIGNAL{0:r, 1:d})
 
 Output: O
 
