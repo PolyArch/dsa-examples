@@ -10,9 +10,8 @@
 #define DTYPE int16_t
 #define sentinel SENTINAL16
 
-
-#define N 64 // matrix dim
-#define M 64 // vector dim
+#define N 512 // matrix dim
+// #define M 512 // vector dim
 #define sp 0.1
 
 // input matrix -- CSR format
@@ -45,9 +44,9 @@ void dotp_impl(int row) {
   
   // configure indirect datawidth
   SS_CONFIG_INDIRECT(T16, T16, dwidth, 1);
-  SS_INDIRECT(P_dotp_int16_matchIndA, &matrix_row_val[row*M], M, P_dotp_int16_matchValA);
+  SS_INDIRECT(P_dotp_int16_matchIndA, &matrix_row_val[row*N], N, P_dotp_int16_matchValA);
   SS_CONFIG_INDIRECT(T16, T16, dwidth, 1);
-  SS_INDIRECT(P_dotp_int16_matchIndB, &vector_val[0], M, P_dotp_int16_matchValB);
+  SS_INDIRECT(P_dotp_int16_matchIndB, &vector_val[0], N, P_dotp_int16_matchValB);
 
   // reset all streams when the output is accumulated
   SS_RECV(P_dotp_int16_O, output[row]);
@@ -57,7 +56,7 @@ void dotp_impl(int row) {
 
 void spmv() {
   SS_CONFIG(dotp_int16_config, dotp_int16_size);
-  // dotp_impl(0);
+  // dotp_impl(0); // 0.54 with this, otherwise 0.21
   for (int row = 0; row < N; ++row) {
     dotp_impl(row);
   }
@@ -79,7 +78,7 @@ int main() {
   row_offset[0]=0;
   int nnz=0;
   for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < M; j += stride) {
+    for (int j = 0; j < N; j += stride) {
       matrix_row_ind.push_back(j);
       // matrix_row_val.push_back(rand());
       ++nnz;
@@ -88,13 +87,16 @@ int main() {
   }
 
   for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < M; ++j) {
+    for (int j = 0; j < N; ++j) {
       matrix_row_val.push_back(2);
     }
   }
 
+  printf("Done allocating data\n");
+
   // Warm up the I-cache
   spmv();
+  printf("Done performing 1 round\n");
   // Wrap around the region of interest
   begin_roi();
   spmv();
