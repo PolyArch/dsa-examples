@@ -2,7 +2,7 @@ RV_ROOT = $(SS_TOOLS)/riscv64-unknown-elf
 MARCH   = rv64imac
 ABI     = lp64
 IFLAGS  = -I$(SS_TOOLS)/include                                              \
-	      -I$(SS)/ss-workloads/common/include                                \
+	      -I$(SS)/dsa-apps/common/include                                    \
 	      -I$(RV_ROOT)/include/c++/8.1.0/                                    \
 	      -I$(RV_ROOT)/include/c++/8.1.0/riscv64-unknown-elf/$(ARCH)/$(ABI)/ \
 	      -I$(RV_ROOT)/include/c++/8.1.0/riscv64-unknown-elf/
@@ -40,7 +40,7 @@ O3-%.bc: %.bc
 
 # Use GCC tools to link the assembly code to executable binaries.
 %.out: %.s
-	$(GCC) $< -o $@ -march=$(MARCH) -mabi=$(ABI) -lm
+	$(GCC) $< -o $@ -march=$(MARCH) -mabi=$(ABI) -static -static-libgcc -static-libstdc++ -lc -lm
 
 clean:
 	rm -f *.bc *.ll *.o *.out *.s *.dfg.h *.dfg

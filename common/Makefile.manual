@@ -1,11 +1,14 @@
-GCC   = riscv64-unknown-elf-g++
+GCC     = riscv64-unknown-elf-g++
+RV_ROOT = $(SS_TOOLS)/riscv64-unknown-elf
+MARCH   = rv64imac
+ABI     = lp64
 
 SBCONFIG=$(SS)/spatial-scheduler/configs/revel-1x1.sbmodel 
 
 DFG_HEADER = $(DFG:.dfg=.dfg.h)
 
 IFLAGS  = -I$(SS_TOOLS)/include               \
-	      -I$(SS)/ss-workloads/common/include
+	      -I$(SS)/dsa-apps/common/include
 
 
 $(DFG_HEADER): %.dfg.h: %.dfg
@@ -13,6 +16,10 @@ $(DFG_HEADER): %.dfg.h: %.dfg
 
 %.out: %.cc $(DFG_HEADER)
 	$(GCC) $< $(IFLAGS) -o $@ -O3 -lm
+
+%.riscv: %.cc $(DFG_HEADER)
+	$(GCC) -fno-common -fno-builtin-printf -specs=$(RV_ROOT)/lib/$(MARCH)/$(ABI)/nano.specs $< $(IFLAGS) -c -O3 -lm
+	$(GCC) -static -specs=$(RV_ROOT)/lib/$(MARCH)/$(ABI)/nano.specs $(<:.cc=.o) -O3 -lm -o $@
 
 %.s: %.cc $(DFG_HEADER)
 	$(GCC) $< $(IFLAGS) -O3 -lm -S -c
