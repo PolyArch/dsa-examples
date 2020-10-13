@@ -1,6 +1,7 @@
 Input: NORM
 
-INV = FDiv64(1.0, NORM)
+TMP = Sqrt64(NORM)
+INV = FDiv64(1.0, TMP)
 
 Output: INV
 

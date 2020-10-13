@@ -1,8 +1,8 @@
 Input: A
 Input: SIGNAL
 
-TMP = FMul64(A, A)
-O = FAccumulate64(TMP, ctrl=SIGNAL{0:r, 1:d})
+MUL = FMul64(A, A)
+O = FAccumulate64(MUL, ctrl=SIGNAL{0:r, 1:d})
 
 Output: O
 
@@ -12,7 +12,8 @@ Output: O
 
 Input: NORM
 
-INV = FDiv64(1.0, NORM)
+TMP = Sqrt64(NORM)
+INV = FDiv64(1.0, TMP)
 
 Output: INV
 

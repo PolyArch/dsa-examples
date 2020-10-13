@@ -1,3 +1,4 @@
+#include <cmath>
 #include <cstdlib>
 #include <cstdint>
 
@@ -19,8 +20,7 @@ void kernel(double* __restrict a) {
     double norm;
     #pragma ss dfg temporal
     {
-      norm = 1.0 / acc;
-      // norm = norm + norm;
+      norm = 1.0 / sqrt(acc);
     }
     #pragma ss stream
     #pragma ss dfg dedicated

@@ -14,6 +14,9 @@ $(DFG_HEADER): %.dfg.h: %.dfg
 %.out: %.cc $(DFG_HEADER)
 	$(GCC) $< $(IFLAGS) -o $@ -O3 -lm
 
+%.s: %.cc $(DFG_HEADER)
+	$(GCC) $< $(IFLAGS) -O3 -lm -S -c
+
 clean:
 	rm -f *.bc *.ll *.o *.out *.s *.dfg.h
 	rm -rf m5out sched viz verif stats
