@@ -14,4 +14,4 @@ gem5.opt $SS/dsa-gem5/configs/example/se.py        \
 --l1i_size=16kB --l2_size=128kB --caches           \
 --ruby --num-cpus=8 --num-dirs=8 --network=simple  \
 --topology=Mesh_XY --mesh-rows=2                   \
---cmd=./main
+--cmd=main

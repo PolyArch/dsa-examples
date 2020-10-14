@@ -34,15 +34,11 @@ uint8_t dwidth = 8;
 // output vector -- dense format
 DTYPE output[N];
 
-// in this case, everyone should receive same number of dot products
-void broadcast_vector_ind() { 
-
-}
-
 // FIXME: in core 2, it is printing status of multiple accelerators
 // TODO: could be multiple rows
 void dotp_impl(int row) {
   begin_roi();
+  SS_CONFIG(dotp_config,dotp_size);
   if(row==0) {
     uint64_t bdcast_mask=0;
     for(int i=1; i<NUM_THREADS; ++i) {
@@ -51,7 +47,6 @@ void dotp_impl(int row) {
     SS_DMA_READ(&vector_ind[0], 0, vec_len * 8, 1, P_IND_1);
     SS_REM_PORT(P_IND_1, vec_len * 8, bdcast_mask, P_dotp_indB);
   }
-  SS_CONFIG(dotp_config,dotp_size);
   SS_DMA_READ(&matrix_row_ind[row_offset[row]], 0, (row_offset[row+1]-row_offset[row]) * dwidth, 1, P_dotp_indA);
   SS_CONST(P_dotp_indA, sentinel, 1);
 
@@ -95,7 +90,7 @@ void *multicore_spmv(void *threadid) {
      exit(-1);
    }
 
-   printf("came in at the thread: %ld\n", tid);
+   // printf("came in at the thread: %ld\n", tid);
 
    dotp_impl(tid);
    
