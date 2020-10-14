@@ -1,0 +1,13 @@
+Input: indA
+Input: indB
+Input: valA
+Input: valB
+
+pred = Compare64(indA, indB, self={1:b1, 2:b2})
+
+mult = Mul64(valA, valB, ctrl=pred{1:b1|d, 2:b2|d})
+
+done = ICmpEQ(mult, 0)
+O    = Acc64(mult, 0, ctrl=done{0:d,1:r})
+
+Output: O
