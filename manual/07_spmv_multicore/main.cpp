@@ -6,7 +6,6 @@
 #include <vector>
 
 #include "sim_timing.h"
-#include "net_util_func.h"
 #include "dsaintrin.h"
 
 #include "./dotp.dfg.h"
@@ -92,8 +91,8 @@ void *entry_point(void *threadid) {
 }
 
 int main() {
-  for(int i=0; i<NUM_THREADS; ++i) {
-    addDest(bdcast_mask,i);
+  for(int d=0; d<NUM_THREADS; ++d) {
+    bdcast_mask = bdcast_mask | (1 << d);
   }
 
   // data generation with a given sparsity
