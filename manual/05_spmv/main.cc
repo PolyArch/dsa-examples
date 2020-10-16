@@ -7,7 +7,7 @@
 #include "dsaintrin.h"
 
 #include "./dotp.dfg.h"
-#include "./dotp_16.dfg.h"
+// #include "./dotp_16.dfg.h"
 
 #define DTYPE uint64_t
 #define sentinel SENTINAL
@@ -33,7 +33,7 @@ int vec_len;
 DTYPE output[N];
 uint8_t dwidth = 8;
 
-void dotp_impl_16bit(int row) {
+/*void dotp_impl_16bit(int row) {
   SS_DMA_READ(&matrix_row_ind[row_offset[row]], 0, (row_offset[row+1]-row_offset[row]) * dwidth, 1, P_dotp_16_indA);
   SS_CONST(P_dotp_16_indA, sentinel, 1); // is it dconst?
 
@@ -55,7 +55,7 @@ void dotp_impl_16bit(int row) {
   SS_RESET();
   SS_WAIT_ALL();
 
-}
+}*/
 
 void dotp_impl(int row) {
   SS_DMA_READ(&matrix_row_ind[row_offset[row]], 0, (row_offset[row+1]-row_offset[row]) * dwidth, 1, P_dotp_indA);
@@ -85,8 +85,8 @@ void dotp_impl(int row) {
 // FIXME: why page fault in this case?
 void spmv() {
   if(dwidth==2) {
-    SS_CONFIG(dotp_16_config, dotp_16_size);
-    dotp_impl_16bit(0);
+    // SS_CONFIG(dotp_16_config, dotp_16_size);
+    // dotp_impl_16bit(0);
   } else {
     SS_CONFIG(dotp_config, dotp_size);
     dotp_impl(0);

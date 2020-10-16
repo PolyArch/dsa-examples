@@ -1,0 +1,28 @@
+Input: indA
+Input: indB
+
+# generate predicate whether indices match (0 for match and 3 for end)
+pred = Compare64(indA, indB)
+
+# output index 1 (for 8 is not accum)
+isagreater = ICmpEQ(pred, 1)
+isbgreater = ICmpEQ(pred, 2)
+# 
+flagA = Select(0, 8, isagreater)
+flagB = Select(0, 8, isbgreater)
+
+nextIA = Acc64(1, flagA)
+nextJB = Acc64(1, flagB)
+
+# returns the matched indices
+match = Min64(indA, indB, ctrl=pred{1:d, 2:d})
+
+# it should end when either of nextIA or nextIB has reached the end but here we use sentinel trick
+is_end = ICmpEQ(pred, 3, ctrl=pred{1:d, 2:d})
+matchedInd = Keep(match, 1, ctrl=is_end{1:d})
+done = Keep(match, is_end)
+
+Output: nextIA
+Output: nextJB
+Output: matchedInd
+Output: done

@@ -69,7 +69,6 @@ void dotp_impl(int row) {
 }
 
 // each thread works on a pre-assigned number of "matrix rows"
-// void *multicore_spmv(void *threadid) {
 void *entry_point(void *threadid) {
   
    long tid = (long)threadid;
@@ -77,15 +76,10 @@ void *entry_point(void *threadid) {
    // configure and inform core about the number of threads in the system (with
    // global wait, it stops)
    SS_CONFIG(dotp_config,dotp_size);
-   SS_GLOBAL_WAIT(NUM_THREADS); // or is it not releasing after the last num_threads=2?
+   SS_GLOBAL_WAIT(NUM_THREADS);
 
-   // printf("Completed execution for thread: %ld\n",tid);
-   /*uint32_t rc = pthread_barrier_wait(&barr);
-   if(rc != 0 && rc != PTHREAD_BARRIER_SERIAL_THREAD) {
-     printf("Could not wait on barrier\n");
-     exit(-1);
-   }*/
-   
+  
+   // computation 
    SS_CONFIG(dotp_config,dotp_size);
    SS_GLOBAL_WAIT(NUM_THREADS);
    dotp_impl(tid);
