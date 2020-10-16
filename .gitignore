@@ -1,0 +1,5 @@
+# Hardware Example
+hw/*.h
+hw/sched/
+hw/verif/
+hw/viz/

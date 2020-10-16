@@ -1,0 +1,6 @@
+Input: A
+Input: B
+
+C = Add(A, B)
+
+Output: C
