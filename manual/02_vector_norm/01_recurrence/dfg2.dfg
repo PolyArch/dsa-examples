@@ -1,6 +1,0 @@
-Input: V
-Input: COEF
-
-RES = FMul64(V, COEF)
-
-Output: RES

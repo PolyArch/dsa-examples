@@ -3,7 +3,7 @@ RV_ROOT = $(SS_TOOLS)/riscv64-unknown-elf
 MARCH   = rv64imac
 ABI     = lp64
 
-SBCONFIG=$(SS)/spatial-scheduler/configs/revel-1x1.sbmodel 
+SBCONFIG=$(SS)/spatial.json
 
 DFG_HEADER = $(DFG:.dfg=.dfg.h)
 

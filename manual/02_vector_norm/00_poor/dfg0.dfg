@@ -1,7 +1,0 @@
-Input: A
-Input: B
-
-TMP = FMul64(A, A)
-O = FAdd64(TMP, B)
-
-Output: O

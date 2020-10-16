@@ -12,9 +12,9 @@ int64_t a[N], b[N], c[N];
 
 void kernel(int64_t* __restrict a, int64_t* __restrict b, int64_t* __restrict c) {
   SS_CONFIG(add_config, add_size);
-  SS_DMA_READ(a, 8, 8, N, P_add_A);
-  SS_DMA_READ(b, 8, 8, N, P_add_B);
-  SS_DMA_WRITE(P_add_C, 8, 8, N, c);
+  SS_LINEAR_READ(a, 8 * N, P_add_A);
+  SS_LINEAR_READ(b, 8 * N, P_add_B);
+  SS_LINEAR_WRITE(P_add_C, c, 8 * N);
   SS_WAIT_ALL();
 }
 

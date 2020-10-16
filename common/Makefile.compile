@@ -21,7 +21,7 @@ GCC   = riscv64-unknown-elf-g++
 
 # Transform code regions to be accelerated to decoupled spatial IR.
 dsa-%.bc: %.bc
-	SBCONFIG=$(SS)/spatial-scheduler/configs/revel-1x1.sbmodel \
+	SBCONFIG=$(SS)/spatial.json                                \
 	$(OPT) -load $(SS)/dsa-llvm-project/build/lib/DSAPass.so   \
 		   -stream-specialize $< -o $@
 
@@ -45,3 +45,4 @@ O3-%.bc: %.bc
 clean:
 	rm -f *.bc *.ll *.o *.out *.s *.dfg.h *.dfg
 	rm -rf m5out sched viz verif stats
+

@@ -1,5 +1,5 @@
 if [ -z "$SBCONFIG" ]; then
-export SBCONFIG="$SS/spatial-scheduler/configs/revel-1x1.sbmodel"
+export SBCONFIG="$SS/spatial.json"
 fi
 
 if [ -z "$BACKCGRA"]; then
