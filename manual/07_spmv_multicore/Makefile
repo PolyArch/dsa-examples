@@ -5,7 +5,7 @@ ABI     = lp64
 
 DFG = dotp.dfg
 DFG_HEADER = $(DFG:.dfg=.dfg.h)
-SBCONFIG=$(SS)/spatial-scheduler/configs/revel-1x1.sbmodel 
+SBCONFIG=$(SS)/spatial.json
 
 TESTS=main
 TESTC=$(TESTS:=.cpp)
@@ -15,7 +15,8 @@ all: $(DFG_HEADER) $(TESTS)
 
 
 OPT?=-O0 #-O3
-CFLAGS=$(OPT) -g -ggdb -gdwarf-3  -DOPENMP -fopenmp -I$(SS)/ss-workloads/common/include -I$(SS_TOOLS)/include -I$(SS_TOOLS)/dsa-apps/common/include
+CFLAGS=$(OPT) -g -ggdb -gdwarf-3  -DOPENMP -fopenmp -I$(SS_TOOLS)/include \
+       -I$(SS)/dsa-apps/common/include
 LIB=-L. -lgomp -lpthread -ldl # -lm5
 LFLAGS = -lm
 
@@ -32,7 +33,7 @@ $(TESTS): $(TEST_OBJS)
 clean:
 	rm -f *.bc *.ll *.o *.out *.s *.dfg.h
 	rm -rf m5out sched viz verif stats
-	rm main
+	rm -f main
 
 cleandfg:
 	rm -f *.dfg.h
