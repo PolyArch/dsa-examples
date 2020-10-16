@@ -10,17 +10,17 @@
 #define DTYPE int64_t
 #define sentinel SENTINAL
 
-#define N 1024 // vector dim
+#define N 4096 // vector dim
 #define dens 0.1
 
 // input vector -- CSR format
-std::vector<DTYPE> indA;
-int an;
+std::vector<DTYPE> vector1_ind;
+int vector1_len;
 
-std::vector<DTYPE> indB;
-int bn;
+std::vector<DTYPE> vector2_ind;
+int vector2_len;
 
-// matched indices -- sized to maximum
+// output vector -- dense format
 DTYPE output[N];
 
 void join() {
@@ -46,11 +46,18 @@ void join() {
    */
 
   int dwidth = sizeof(DTYPE);
-  uint64_t done_flag=0; // it maintains whether the computation is completed..
+  
+  SS_DMA_READ(&vector1_ind[0], 0, vector1_len * dwidth, 1, P_join_indA);
+  SS_CONST(P_join_indA, sentinel, 1);
 
-  // Fill the kernel implementation here.
-  // After the implementation is done, use `./run.sh main.out' to execute the simulator.
+  SS_DMA_READ(&vector2_ind[0], 0, vector2_len * dwidth, 1, P_join_indB);
+  SS_CONST(P_join_indB, sentinel, 1);
+  
+  SS_DMA_WRITE(P_join_matchedInd, 0, N * dwidth, 1, output)
 
+  // reset all streams when the output is accumulated
+  uint64_t done_flag;
+  SS_RECV(P_join_done, done_flag);
   SS_RESET();
 
   SS_WAIT_ALL();
@@ -59,13 +66,13 @@ void join() {
 void vanilla_join() {
   int i=0, j=0;
   int iout=0;
-  while (i<an && bn) {
-    if (indA[i] < indB[j]) {
+  while (i<vector1_len && vector2_len) {
+    if (vector1_ind[i] < vector2_ind[j]) {
       ++i;
-    } else if (indA[i] < indB[j]) {
+    } else if (vector1_ind[i] < vector2_ind[j]) {
       ++j;
     } else {
-      output[++iout] = indA[i];
+      output[++iout] = vector1_ind[i];
       ++i; ++j;
     }
   }
@@ -76,17 +83,17 @@ int main() {
 
   srand(0);
   // data generation with a given sparsity
-  an=0;
+  vector1_len=0;
   int stride = 1/dens;
   for (int j = 0; j < N; j+=stride) {
-    indA.push_back(j + rand()%stride); // TODO: this should be rand?
-    ++an;
+    vector1_ind.push_back(j + rand()%stride); // TODO: this should be rand?
+    ++vector1_len;
   }
 
-  bn=0;
+  vector2_len=0;
   for (int j = 1; j < N; j+=stride) {
-    indB.push_back(j + rand()%stride);
-    ++bn;
+    vector2_ind.push_back(j + rand()%stride);
+    ++vector2_len;
   }
 
   vanilla_join();

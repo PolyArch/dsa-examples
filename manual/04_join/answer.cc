@@ -10,7 +10,7 @@
 #define DTYPE int64_t
 #define sentinel SENTINAL
 
-#define N 4096 // vector dim
+#define N 1024 // vector dim
 #define dens 0.1
 
 // input vector -- CSR format
@@ -46,17 +46,18 @@ void join() {
    */
 
   int dwidth = sizeof(DTYPE);
-  
-  SS_DMA_READ(&indA[0], 0, an * dwidth, 1, P_join_indA);
+  uint64_t done_flag=0; // it maintains whether the computation is completed..
+
+  // Fill the kernel implementation here.
+  // After the implementation is done, use `./run.sh main.out' to execute the simulator.
+  SS_DMA_READ(&indA[0], 0, an * 8, 1, P_join_indA);
   SS_CONST(P_join_indA, sentinel, 1);
 
-  SS_DMA_READ(&indB[0], 0, bn * dwidth, 1, P_join_indB);
+  SS_DMA_READ(&indB[0], 0, bn * 8, 1, P_join_indB);
   SS_CONST(P_join_indB, sentinel, 1);
-  
-  SS_DMA_WRITE(P_join_matchedInd, 0, N * dwidth, 1, output)
 
-  // reset all streams when the output is accumulated
-  uint64_t done_flag;
+  SS_DMA_WRITE(P_join_matchedInd, 0, (N) * 8, 1, &output[0]);
+
   SS_RECV(P_join_done, done_flag);
   SS_RESET();
 
