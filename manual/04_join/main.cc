@@ -10,53 +10,31 @@
 #define DTYPE int64_t
 #define sentinel SENTINAL
 
-#define N 4096 // vector dim
+#define N 1024 // vector dim
 #define dens 0.1
 
 // input vector -- CSR format
-std::vector<DTYPE> vector1_ind;
-int vector1_len;
+std::vector<DTYPE> indA;
+int an;
 
-std::vector<DTYPE> vector2_ind;
-int vector2_len;
+std::vector<DTYPE> indB;
+int bn;
 
-// output vector -- dense format
+// matched indices -- sized to maximum
 DTYPE output[N];
 
 void join() {
-    /* Hint:
-   * Possible useful indirect intrinsics:
-   * 1. SS_INDIRECT(ind_port, addr, n, port)   
-   *
-   * ptr = addr;
-   * for (int i = 0; i < n; ++i) {
-   *   send ptr [ind_port_stream] to port;
-   * }
-   *
-   * 2.  SS_CONFIG_INDIRECT(itype, dtype, mult, n)
-   *     Sets the datatype of index, and output.
-   *     Multiplier is the mult of the index
-   *
-   * 3. SS_RECV(port, mem_addr);
-   *    Barrier until we write a value from port to mem_addr
-   *
-   * 4. SS_RESET();   
-   * Reset all live requests and streams except CGRA data and configuration
-   *
-   */
 
   int dwidth = sizeof(DTYPE);
-  
-  SS_DMA_READ(&vector1_ind[0], 0, vector1_len * dwidth, 1, P_join_indA);
-  SS_CONST(P_join_indA, sentinel, 1);
+  uint64_t done_flag=0; // it maintains whether the computation is completed..
 
-  SS_DMA_READ(&vector2_ind[0], 0, vector2_len * dwidth, 1, P_join_indB);
-  SS_CONST(P_join_indB, sentinel, 1);
-  
-  SS_DMA_WRITE(P_join_matchedInd, 0, N * dwidth, 1, output)
+  // Fill in memory streams here
+  // Stream 1: Read vector1_ind from memory along with sentinel
+  // Stream 2: Read vector2_ind from memory along with sentinel
+  // Stream 3: Write matching index stream from CGRA
 
-  // reset all streams when the output is accumulated
-  uint64_t done_flag;
+  // After the implementation is done, use `./run.sh main.out' to execute the simulator.
+
   SS_RECV(P_join_done, done_flag);
   SS_RESET();
 
@@ -66,13 +44,13 @@ void join() {
 void vanilla_join() {
   int i=0, j=0;
   int iout=0;
-  while (i<vector1_len && vector2_len) {
-    if (vector1_ind[i] < vector2_ind[j]) {
+  while (i<an && bn) {
+    if (indA[i] < indB[j]) {
       ++i;
-    } else if (vector1_ind[i] < vector2_ind[j]) {
+    } else if (indA[i] < indB[j]) {
       ++j;
     } else {
-      output[++iout] = vector1_ind[i];
+      output[++iout] = indA[i];
       ++i; ++j;
     }
   }
@@ -83,17 +61,17 @@ int main() {
 
   srand(0);
   // data generation with a given sparsity
-  vector1_len=0;
+  an=0;
   int stride = 1/dens;
   for (int j = 0; j < N; j+=stride) {
-    vector1_ind.push_back(j + rand()%stride); // TODO: this should be rand?
-    ++vector1_len;
+    indA.push_back(j + rand()%stride); // TODO: this should be rand?
+    ++an;
   }
 
-  vector2_len=0;
+  bn=0;
   for (int j = 1; j < N; j+=stride) {
-    vector2_ind.push_back(j + rand()%stride);
-    ++vector2_len;
+    indB.push_back(j + rand()%stride);
+    ++bn;
   }
 
   vanilla_join();
