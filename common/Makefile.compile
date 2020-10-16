@@ -3,9 +3,9 @@ MARCH   = rv64imac
 ABI     = lp64
 IFLAGS  = -I$(SS_TOOLS)/include                                              \
 	      -I$(SS)/dsa-apps/common/include                                    \
-	      -I$(RV_ROOT)/include/c++/8.1.0/                                    \
-	      -I$(RV_ROOT)/include/c++/8.1.0/riscv64-unknown-elf/$(ARCH)/$(ABI)/ \
-	      -I$(RV_ROOT)/include/c++/8.1.0/riscv64-unknown-elf/
+	      -I$(RV_ROOT)/include/c++/10.1.0/                                    \
+	      -I$(RV_ROOT)/include/c++/10.1.0/riscv64-unknown-elf/$(ARCH)/$(ABI)/ \
+	      -I$(RV_ROOT)/include/c++/10.1.0/riscv64-unknown-elf/
 
 CLANG_FLAGS = -O2 -fno-inline -fno-vectorize -fno-slp-vectorize \
               -fno-unroll-loops -stream-specialize -emit-llvm -c -std=c++11
