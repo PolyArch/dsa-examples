@@ -1,0 +1,9 @@
+Input: A
+Input: B
+Input: D
+
+E = UDiv(D, B)
+C = Add(A, E)
+
+
+Output: C
