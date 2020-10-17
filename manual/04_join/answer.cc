@@ -28,13 +28,13 @@ void join() {
   int dwidth = sizeof(DTYPE);
   uint64_t done_flag=0; // it maintains whether the computation is completed..
 
-  SS_DMA_READ(&indA[0], 0, an * 8, 1, P_join_indA);
+  SS_LINEAR_READ(&indA[0], an * 8, P_join_indA);
   SS_CONST(P_join_indA, sentinel, 1);
 
-  SS_DMA_READ(&indB[0], 0, bn * 8, 1, P_join_indB);
+  SS_LINEAR_READ(&indB[0], bn * 8, P_join_indB);
   SS_CONST(P_join_indB, sentinel, 1);
 
-  SS_DMA_WRITE(P_join_matchedInd, 0, (N) * 8, 1, &output[0]);
+  SS_LINEAR_WRITE(P_join_matchedInd, &output[0], N * 8);
 
   SS_RECV(P_join_done, done_flag);
   SS_RESET();

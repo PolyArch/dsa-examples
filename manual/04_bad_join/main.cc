@@ -36,7 +36,7 @@ void join_bad() {
   SS_CONFIG_INDIRECT(T64, T64, 8, 1);
   SS_INDIRECT(P_join_nextJB, &indB[0], 2 * (N+1), P_join_indB);
 
-  SS_DMA_WRITE(P_join_matchedInd, 0, N * 8, 1, &output[0]);
+  SS_LINEAR_WRITE(P_join_matchedInd, &output[0], N * 8);
 
   SS_RECV(P_join_done, done_flag);
   SS_RESET();

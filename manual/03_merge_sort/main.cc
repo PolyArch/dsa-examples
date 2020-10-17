@@ -14,25 +14,13 @@ int64_t c[2*N];
 
 // TODO: I do not understand restrict keyword, why don't I copy c?
 void merge_impl() {
-  SS_DMA_READ(a, 0, N * 8, 1, P_sort_A);
+  SS_LINEAR_READ(a, N * 8, P_sort_A);
   SS_CONST(P_sort_A, SENTINAL, 1);
-  SS_DMA_READ(b, 0, N * 8, 1, P_sort_B);
+  SS_LINEAR_READ(b, N * 8, P_sort_B);
   SS_CONST(P_sort_B, SENTINAL, 1);
-  SS_DMA_WRITE(P_sort_O, 0, 2*N * 8, 1, c);
+  SS_LINEAR_WRITE(P_sort_O, c, 2*N * 8);
   SS_WAIT_ALL();
 }
-
-/*void merge_sort(int64_t* __restrict a) {
-  SS_CONFIG(sort_config, sort_size);
-  int64_t* to_sort = a;
-  int64_t* buffer  = b;
-  for (int block = 1; block * 2 <= N; block *= 2) {
-    for (int i = 0; i + block < N; i += block * 2) {
-	  merge_impl(to_sort + i, block, to_sort + block + i, block, buffer + i);
-	}
-	std::swap(to_sort, buffer);
-  }
-}*/
 
 void vanilla_merge_sort() {
   int i=0, j=0, iout=0;

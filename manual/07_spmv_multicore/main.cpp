@@ -42,10 +42,10 @@ uint64_t bdcast_mask=0;
 void dotp_impl(int row) {
    // show "row" load imbalance here...
   if(row==0) {
-    SS_DMA_READ(&vector_ind[0], 0, vec_len * 8, 1, P_IND_1);
+    SS_LINEAR_READ(&vector_ind[0], vec_len * 8, P_IND_1);
     SS_REM_PORT(P_IND_1, vec_len * 8, bdcast_mask, P_dotp_indB);
   }
-  SS_DMA_READ(&matrix_row_ind[row_offset[row]], 0, (row_offset[row+1]-row_offset[row]) * dwidth, 1, P_dotp_indA);
+  SS_LINEAR_READ(&matrix_row_ind[row_offset[row]], (row_offset[row+1]-row_offset[row]) * dwidth, P_dotp_indA);
   SS_CONST(P_dotp_indA, sentinel, 1);
 
   // indirect access to the values of matched indices (unknown length)

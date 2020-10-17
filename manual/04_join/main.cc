@@ -35,6 +35,7 @@ void join() {
 
   // After the implementation is done, use `./run.sh main.out' to execute the simulator.
 
+
   SS_RECV(P_join_done, done_flag);
   SS_RESET();
 
