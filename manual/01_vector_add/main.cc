@@ -4,7 +4,7 @@
 #include "sim_timing.h"
 #include "dsaintrin.h"
 
-#include "./add.dfg.h"
+#include "./compute.dfg.h"
 
 #define N 512
 
