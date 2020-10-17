@@ -40,7 +40,6 @@ DTYPE output[N];
 uint64_t bdcast_mask=0;
 
 void dotp_impl(int row) {
-   // show "row" load imbalance here...
   if(row==0) {
     SS_LINEAR_READ(&vector_ind[0], vec_len * 8, P_IND_1);
     SS_REM_PORT(P_IND_1, vec_len * 8, bdcast_mask, P_dotp_indB);

@@ -8,9 +8,9 @@
 
 #include "./join.dfg.h"
 #define DTYPE int64_t
-#define sentinel SENTINAL
+#define sentinel (((uint64_t)1)<<63)
 
-#define N 1024 // vector dim
+#define N 4096 // vector dim
 #define dens 0.1
 
 // input vector -- CSR format
@@ -28,9 +28,18 @@ void join() {
   int dwidth = sizeof(DTYPE);
   uint64_t done_flag=0; // it maintains whether the computation is completed..
 
+
+  /* Useful intrinsics:
+   * Read array to port: SS_LINEAR_READ(addr, bytes, port);
+   * Read constant value to port: SS_CONST(port, data, times);
+   * Write array to port: SS_LINEAR_WRITE(port, bytes, addr);
+   */
+
   // Fill in memory streams here
-  // Stream 1: Read vector1_ind from memory along with sentinel
-  // Stream 2: Read vector2_ind from memory along with sentinel
+  // Stream 1: Linear read indA from memory along with "sentinel"
+
+  // Stream 2: Linear read indB from memory along with "sentinel"
+
   // Stream 3: Write matching index stream from CGRA
 
   // After the implementation is done, use `./run.sh main.out' to execute the simulator.

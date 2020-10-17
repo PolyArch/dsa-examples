@@ -1,7 +1,17 @@
 Input: indA
 Input: indB
 
-# generate predicate using Compare64 for indA and indB (it should reuse data for smaller indices)
+# Add one DFG Instruciton Below;
+# generate predicate "pred" using Compare64 of indA and indB
+# (it should reuse the smaller index of the comparison)
+# instead of "ctrl=", you need to use "self=" to indicate that
+# the control predicate is coming from the instruction itself
+
+# Control Definition Below:
+# if (op1 > op2) out = 1 \
+# else if (op2 > op1) out = 2 \
+# else if (op1 == INF) out = 3
+# else out = 1
 
 # returns the matched indices
 match = Min64(indA, indB, ctrl=pred{1:b1|d, 2:b2|d})

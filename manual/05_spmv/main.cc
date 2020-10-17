@@ -56,18 +56,9 @@ void dotp_impl(int row) {
   SS_WAIT_ALL();
 }
 
-// TODO: insert sentinel in the data (2D linear+const stream (if 3-D
-// possible?), and make it streaming read)
-// FIXME: why page fault in this case?
 void spmv() {
-  if(dwidth==2) {
-    // SS_CONFIG(dotp_16_config, dotp_16_size);
-    // dotp_impl_16bit(0);
-  } else {
-    SS_CONFIG(dotp_config, dotp_size);
-    dotp_impl(0);
-    // dotp_impl2(0, matrix_row_ind, matrix_row_val, (row_offset[1]), vector_ind, vector_val, vec_len);
-  }
+  SS_CONFIG(dotp_config, dotp_size);
+  dotp_impl(0);
   /*SS_CONFIG(dotp_config, dotp_size);
   for (int row = 0; row < M; ++row) {
     dotp_impl(row);
@@ -106,7 +97,6 @@ int main() {
   vec_len=0;
   int stride = 1/dens;
   for (int j = 0; j < N; j+=stride) {
-    // vector_ind.push_back(j);
     vector_ind.push_back(j + rand()%stride);
     vector_val.push_back(1+rand());
     ++vec_len;
@@ -116,7 +106,6 @@ int main() {
   int nnz=0;
   for (int i = 0; i < M; ++i) {
     for (int j = 0; j < N; j += stride) {
-      // matrix_row_ind.push_back(j);
       matrix_row_ind.push_back(j + rand()%stride);
       matrix_row_val.push_back(1+rand());
       ++nnz;

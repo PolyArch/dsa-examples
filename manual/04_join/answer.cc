@@ -8,7 +8,7 @@
 
 #include "./join.dfg.h"
 #define DTYPE int64_t
-#define sentinel SENTINAL
+#define sentinel (((uint64_t)1)<<63)
 
 #define N 1024 // vector dim
 #define dens 0.1
