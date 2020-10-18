@@ -3,7 +3,7 @@ Input: indB
 
 # Add one DFG Instruciton Below;
 # generate predicate "pred" using Compare64 of indA and indB
-# (it should reuse the smaller index of the comparison)
+# (it should reuse the larger index of the comparison)
 # instead of "ctrl=", you need to use "self=" to indicate that
 # the control predicate is coming from the instruction itself
 

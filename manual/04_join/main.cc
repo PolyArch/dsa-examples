@@ -32,7 +32,7 @@ void join() {
   /* Useful intrinsics:
    * Read array to port: SS_LINEAR_READ(addr, bytes, port);
    * Read constant value to port: SS_CONST(port, data, times);
-   * Write array to port: SS_LINEAR_WRITE(port, bytes, addr);
+   * Write array to port: SS_LINEAR_WRITE(port, addr, bytes);
    */
 
   // Fill in memory streams here
